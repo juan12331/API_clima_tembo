@@ -24,7 +24,6 @@ const traducaoClima = {
     "light snow": "Pouca neve",
     "light rain": "Pouca chuva"
 }
-
 app.get('/climatempo/:cidade', async (req, res) => {
     const city = req.params.cidade;
 
