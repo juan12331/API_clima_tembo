@@ -2,13 +2,13 @@
 
 - fase inicial
 
-#Pendencias 🧑‍💻
+# Pendencias 🧑‍💻
 - html (estruturação do site)
 - css (estilização e animações)
 - javascript (API etc)
 
 
-#código para Apikey 🔑
+# código para Apikey 🔑
 
 - crie um arquivo config.json
   
@@ -19,7 +19,7 @@
     "apikey": "sua chave da api"
 }
 
-#como conseguir uma chave API: 🔑❓
+# como conseguir uma chave API: 🔑❓
 
 
 - entre em https://openweathermap.org/api
