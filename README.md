@@ -1,2 +1,8 @@
 # API_clima_tembo
-Site usando API metereológica para identifcar climas de distintas cidades
+
+- fase inicial
+
+#Pendencias
+- html (estruturação do site)
+- css (estilização e animações)
+- javascript (API etc)
