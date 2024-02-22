@@ -26,3 +26,5 @@
 - crie um aconta (está na nav bar)
 - clique no seu nome (está na navbar)
 - vá em "My API heys"
+
+(lembre-se sempre de instalar as dependecias)
