@@ -19,7 +19,7 @@
     "apikey": "sua chave da api"
 }
 
-# como conseguir uma chave API: 🔑❓
+# como conseguir uma chave API 🔑❓
 
 
 - entre em https://openweathermap.org/api
