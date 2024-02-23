@@ -1,5 +1,5 @@
 {
-  "name": "api_clima_tembo",
+  "name": "api_clima_tempo",
   "version": "1.0.0",
   "description": "- fase inicial",
   "main": "app.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/juan12331/API_clima_tembo.git"
+    "url": "git+https://github.com/juan12331/API_clima_tempo.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/juan12331/API_clima_tembo/issues"
+    "url": "https://github.com/juan12331/API_clima_tempo/issues"
   },
-  "homepage": "https://github.com/juan12331/API_clima_tembo#readme",
+  "homepage": "https://github.com/juan12331/API_clima_tempo#readme",
   "dependencies": {
     "axios": "^1.6.7",
     "cors": "^2.8.5",
