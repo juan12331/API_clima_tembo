@@ -1,30 +1,19 @@
-# API_clima_tempo ☁️
-
-- fase inicial
-
-# Pendencias 🧑‍💻
-- html (estruturação do site)
-- css (estilização e animações)
-- javascript (API etc)
-
-
 # código para Apikey 🔑
 
-- crie um arquivo config.json
-  
+- crie um arquivo chamado config.json
 
-  dentro coloque:
+  nele escreva:
 
 {
-    "apikey": "sua chave da api"
+    "apikey": "[sua chave da api]"
 }
 
 # como conseguir uma chave API 🔑❓
 
 
 - entre em https://openweathermap.org/api
-- crie um aconta (está na nav bar)
-- clique no seu nome (está na navbar)
-- vá em "My API heys"
+- crie uma conta (está na navbar)
+- clique no seu nome 
+- vá em "My API keys"
 
 (lembre-se sempre de instalar as dependecias)
