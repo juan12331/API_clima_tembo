@@ -6,7 +6,7 @@ const config = require ('./config.json');
 const apikey = config.apikey;
 
 const app = express();
-app.listen(6969);
+app.listen(3000);
 
 app.use(cors());
 app.use(express.json());
