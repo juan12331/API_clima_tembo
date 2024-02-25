@@ -6,24 +6,27 @@ const config = require ('./config.json');
 const apikey = config.apikey;
 
 const app = express();
-app.listen(3000);
+app.listen(80);
 
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-const traducaoClima = {
-    "clear sky": "Céu limpo",
-    "mist": "Névoa",
-    "snow": "Nevando",
-    "few clouds": "Poucas nuvens",
-    "scattered clouds": "Nuvens dispersas",
-    "overcast clouds": "Nuvens nubladas",
-    "broken clouds": "Nuvens quebradas",
-    "moderate rain": "Chuva moderada",
-    "light snow": "Pouca neve",
-    "light rain": "Pouca chuva"
+function traducaoClima() {
+    return {
+        "clear sky": "Céu limpo",
+        "mist": "Névoa",
+        "snow": "Nevando",
+        "few clouds": "Poucas nuvens",
+        "scattered clouds": "Nuvens dispersas",
+        "overcast clouds": "Nuvens nubladas",
+        "broken clouds": "Nuvens separadas",
+        "moderate rain": "Chuva moderada",
+        "light snow": "Pouca neve",
+        "light rain": "Pouca chuva"
+    }
 }
+
 app.get('/climatempo/:cidade', async (req, res) => {
     const city = req.params.cidade;
 
@@ -31,15 +34,20 @@ app.get('/climatempo/:cidade', async (req, res) => {
         const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`);
             
         if(response.status === 200){
-
-                const clima = traducaoClima[response.data.weather[0].description] || response.data.weather[0].description;
-        
+                const clima = traducaoClima()[response.data.weather[0].description] || response.data.weather[0].description;
+                const iconUrl = `http://openweathermap.org/img/w/${response.data.weather[0].icon}.png`;
+                
                 const weatherData = {
-                    Temperatura: response.data.main.temp,
-                    Umidade: response.data.main.humidity,
-                    VelocidadeDoVento: response.data.wind.speed,
-                    Clima: clima
+                    nome: response.data.name,
+                    pais: response.data.sys.country,
+                    temperatura: response.data.main.temp,
+                    umidade: response.data.main.humidity,
+                    velocidadeDoVento: response.data.wind.speed,
+                    clima: clima,
+                    iconUrl: iconUrl
                 };
+
+                console.log(response.data);
 
                 res.send(weatherData);
             } else{
