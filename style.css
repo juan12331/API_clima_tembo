@@ -1,3 +1,30 @@
 *{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
+}
+
+/* toast */
+
+.toast {
+    position: absolute;
+    font-size: 1.1em;
+    padding: 1rem;
+    background-color: #ef233c;
+    border-radius: 7px;
+    color: white;
+    right: 50%;
+    top: 1rem;
+    transform: translateX(50%);
+
+    & i {
+        float: left;
+    }
+}
+
+.container{
+    padding: 0.5rem;
+    width: fit-content;
+    height: fit-content;
+    border: 2.5px solid black;
+    text-align: center;
 }
