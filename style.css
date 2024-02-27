@@ -21,10 +21,57 @@
     }
 }
 
+body{
+    background-color: #ef233c;
+}
+
+
+
+nav{
+    display: flex;
+    justify-content: end;
+
+}
+
+#horarios{
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: xx-large;
+    user-select: none;
+}
+
+#pesquisar{
+    width: 25%;
+    border-radius: 0.2rem;
+    background-color: whitesmoke;
+    border: none;
+    height: 1.25rem;
+}
+
+
+
 .container{
     padding: 0.5rem;
-    width: 100%;
-    height: 100%;
     border: 2.5px solid black;
     text-align: center;
+}
+
+.nome, .temperatura{
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+#iconPais{
+    width: 30px;
+    height: 30px;
+    margin-left: none;
+    margin-right: none;
+}
+
+.paisEcidade{
+    text-align: center;
+}
+
+.temperaturaDiv{
+
 }
