@@ -32,15 +32,19 @@ function updateElementImg(elementId, src) {
 
 function displayData(data) {
     if (!data) return;
+
+    const temperatura = data.temperatura . toFixed(0);
+
     console.log(data);
     const imgUrl = `https://flagsapi.com/${data.pais}/flat/64.png`;
-    updateElementText("temperatura", data.temperatura, "ºC");
+    updateElementText("temperatura", temperatura, "ºC");
     updateElementText("umidade", data.umidade, "%");
     updateElementText("veloVento", data.velocidadeDoVento, "km/h");
     updateElementText("clima", data.clima, "");
     updateElementText("nome", data.nome, "");
     updateElementImg("iconClima", data.iconUrl);
     updateElementImg("iconPais", imgUrl);
+    
 }
 
 function handleError(errorMsg) {
