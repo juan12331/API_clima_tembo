@@ -44,7 +44,6 @@ function displayData(data) {
     updateElementText("nome", data.nome, "");
     updateElementImg("iconClima", data.iconUrl);    
     updateElementImg("iconPais", imgUrl);
-    // changeicon("icon2", imgUrl);
 }
 
 function handleError(errorMsg) {
@@ -92,8 +91,3 @@ pesquisarCampo.addEventListener("keyup", async (e) => {
     }
 });
 
-// const changeicon = (icon, image) => {
-//      const icon = document.getElementById(icon)
-//     icon.href = image
-     
-//  }
