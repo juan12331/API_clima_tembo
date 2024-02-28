@@ -103,10 +103,12 @@ function updateBackground(background, clima){
         background1.src = "images/nevoa.jpg"
     } else if (clima =="Céu limpo"){
         background1.src = "images/ceu.jpg"
-    } else if (clima == "Parcialmente nublado" || clima == "Nublado"){
+    } else if (clima == "Parcialmente nublado" ){
         background1.src = "images/nublado.gif"
-    } else if (clima == "Tempestada") {
+    } else if (clima == "Tempestade") {
         background1.src = "images/tempestade.gif"
+    } else if (clima == "Nublado") {
+        background1.src = "images/nubladoR.gif"
     }
      else{
         background1.src = "https://upload.wikimedia.org/wikipedia/commons/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg"
