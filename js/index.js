@@ -44,6 +44,7 @@ function displayData(data) {
     updateElementText("nome", data.nome, "");
     updateElementImg("iconClima", data.iconUrl);    
     updateElementImg("iconPais", imgUrl);
+    updateBackground("background", data.clima)
 }
 
 function handleError(errorMsg) {
@@ -91,3 +92,23 @@ pesquisarCampo.addEventListener("keyup", async (e) => {
     }
 });
 
+function updateBackground(background, clima){
+    const background1 = document.getElementById(background)
+
+    if (clima == "Chuva" || clima == "Garoa"){
+        background1.src = "images/chuva-20995920-131120200056.gif"
+    } else if(clima == "Neve"){
+        background1.src = "images/neve.gif"
+    } else if (clima =="Névoa"){
+        background1.src = "images/nevoa.jpg"
+    } else if (clima =="Céu limpo"){
+        background1.src = "images/ceu.jpg"
+    } else if (clima == "Parcialmente nublado" || clima == "Nublado"){
+        background1.src = "images/nublado.gif"
+    } else if (clima == "Tempestada") {
+        background1.src = "images/tempestade.gif"
+    }
+     else{
+        background1.src = "https://upload.wikimedia.org/wikipedia/commons/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg"
+    }
+}
