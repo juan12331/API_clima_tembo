@@ -42,9 +42,9 @@ function displayData(data) {
     updateElementText("veloVento", data.velocidadeDoVento, "km/h");
     updateElementText("clima", data.clima, "");
     updateElementText("nome", data.nome, "");
-    updateElementImg("iconClima", data.iconUrl);
+    updateElementImg("iconClima", data.iconUrl);    
     updateElementImg("iconPais", imgUrl);
-    
+    // changeicon("icon2", imgUrl);
 }
 
 function handleError(errorMsg) {
@@ -88,5 +88,12 @@ pesquisarCampo.addEventListener("keyup", async (e) => {
     if (e.key === 'Enter') {
         const informacoes = await getData(pesquisarCampo.value.toLowerCase());
         displayData(informacoes);
+        
     }
 });
+
+// const changeicon = (icon, image) => {
+//      const icon = document.getElementById(icon)
+//     icon.href = image
+     
+//  }
