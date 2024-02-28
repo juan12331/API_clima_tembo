@@ -75,6 +75,7 @@ function traducaoClima() {
         "tornado": "Tornado",
       
         "Clear": "Céu limpo",
+        "clear sky": "Céu limpo,
       
         "Clouds": "Nuvens",
         "few clouds": "Poucas nuvens",
