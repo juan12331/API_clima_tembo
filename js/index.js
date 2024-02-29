@@ -77,7 +77,17 @@ async function getData(cidade) {
     }
 }
 
+function setHorario() {
+    let date = new Date();
+    let minute =  ("0" + date.getMinutes()).slice(-2);
+    let hour =  ("0" + date.getHours()).slice(-2);
+    let horario = `${hour}:${minute}`
+    updateElementText("horario", horario);
+}x
+
 window.addEventListener("load", async () => {
+    setHorario();
+    setInterval(setHorario, 1000);
     const informacoes = await getData("marília");
     displayData(informacoes);
 });
