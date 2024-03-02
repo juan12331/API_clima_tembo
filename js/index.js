@@ -98,6 +98,7 @@ pesquisarCampo.addEventListener("keyup", async (e) => {
     if (e.key === 'Enter') {
         const informacoes = await getData(pesquisarCampo.value.toLowerCase());
         displayData(informacoes);
+        pesquisaCampo.value = '';
         
     }
 });
