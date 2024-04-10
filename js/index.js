@@ -1,6 +1,6 @@
-const apiUrl = "http://127.0.0.1:80/climatempo/";
+const apiUrl = "http://127.0.0.1:80/climatempo/"; //url da api clima tempo
 
-function fade(element, callback) {
+function fade(element, callback) { //função que serve para o toast desaparecer devagar
     let op = 1;
     let timer = setInterval(function () {
         if (op <= 0.1){
@@ -16,27 +16,27 @@ function fade(element, callback) {
     }, 50);
 }
 
-function updateElementText(elementId, text, text2) {
+function updateElementText(elementId, text, text2) { // função que serve para podermos colocar os textos (graus celcius etc e tal)
     const element = document.getElementById(elementId);
     if (element) {
         element.innerText = text + text2;
     }
 }
 
-function updateElementImg(elementId, src) {
+function updateElementImg(elementId, src) { // mesma coisa q o updateElementText só que com imagem 
     const element = document.getElementById(elementId);
     if (element) {
         element.src = src;
     }
 }
 
-function displayData(data) {
+function displayData(data) { // função na qual retorna as informações como, clima, imagem etc
     if (!data) return;
 
-    const temperatura = data.temperatura . toFixed(0);
+    const temperatura = data.temperatura.toFixed(0);
 
     console.log(data);
-    const imgUrl = `https://flagsapi.com/${data.pais}/flat/64.png`;
+    const imgUrl = `https://flagsapi.com/${data.pais}/flat/64.png`; // imagem do icone que aparece (bandeira)
     updateElementText("temperatura", temperatura, "ºC");
     updateElementText("umidade", data.umidade, "%");
     updateElementText("veloVento", data.velocidadeDoVento, "km/h");
@@ -47,7 +47,7 @@ function displayData(data) {
     updateBackground("background", data.clima)
 }
 
-function handleError(errorMsg) {
+function handleError(errorMsg) { // função que serve para mostrar o toast quando a cidade tiver com algum erro
     const toast = document.createElement("div");
     const icon = document.createElement("i");
     icon.className = "bx bxs-shield-x";
@@ -63,7 +63,7 @@ function handleError(errorMsg) {
     }, 3000);
 }
 
-async function getData(cidade) {
+async function getData(cidade) { // fazer a pesquisa da cidade
     const url = apiUrl + cidade;
     try {
         const response = await fetch(url);
@@ -77,7 +77,7 @@ async function getData(cidade) {
     }
 }
 
-function setHorario() {
+function setHorario() { // mostrar horario no canto da tela
     let date = new Date();
     let minute =  ("0" + date.getMinutes()).slice(-2);
     let hour =  ("0" + date.getHours()).slice(-2);
@@ -85,25 +85,25 @@ function setHorario() {
     updateElementText("horario", horario, "");
 }
 
-window.addEventListener("load", async () => {
-    setHorario();
-    setInterval(setHorario, 1000);
-    const informacoes = await getData("marília");
-    displayData(informacoes);
+window.addEventListener("load", async () => { // o que acontece quando você começa a usar o bglh em si
+    setHorario(); //mostra o horario
+    setInterval(setHorario, 1000); // mudar a cada segundo o horario
+    const informacoes = await getData("marília"); // pegar as informações de marilia (cidade padrão)
+    displayData(informacoes); // mostrar informações
 });
 
-const pesquisarCampo = document.getElementById("pesquisar");
+const pesquisarCampo = document.getElementById("pesquisar"); // pegar o id do input de pesquisar
 
-pesquisarCampo.addEventListener("keyup", async (e) => {
-    if (e.key === 'Enter') {
-        const informacoes = await getData(pesquisarCampo.value.toLowerCase());
-        displayData(informacoes);
-        pesquisaCampo.value = '';
+pesquisarCampo.addEventListener("keyup", async (e) => { //vai rodar esse evento toda vez q clicar qualquer tecla do input
+    if (e.key === 'Enter') { // se a tal tecla for igual a enter vai fazer oq ta aq
+        const informacoes = await getData(pesquisarCampo.value.toLowerCase()); //que é pegar as informações
+        displayData(informacoes); // mostrar as informações
+        pesquisarCampo.value = ''; // e apagar o input 
         
     }
 });
 
-function updateBackground(background, clima){
+function updateBackground(background, clima){ //função que serve para dar o update de bacground dependendo do clima
     const background1 = document.getElementById(background)
 
     if (clima == "Chuva" || clima == "Garoa"){
