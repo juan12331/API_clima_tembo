@@ -1,3 +1,9 @@
+# O que a aplicação faz ❓
+
+- Esta é uma interface web que fornece informações meteorológicas em tempo real de uma determinada cidade. Ela exibe a temperatura, umidade velocidade do vento e condições climáticas atuais, além de mostrar o horário local. Os dados são obtidos de uma API externa que retorna informações meteorológicas com base na cidade fornecida.
+
+
+
 # código para Apikey 🔑
 
 - no arquivo chamado config.json coloque sua chave api entre aspas na parte entre colchetes:
