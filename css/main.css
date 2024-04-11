@@ -1,132 +1,144 @@
+/* Importa o arquivo toast.css */
 @import "toast.css";
 
+/* Define o estilo padrão para todos os elementos */
 * {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 0;
-    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Define a família de fontes */
+    margin: 0; /* Remove margens */
+    box-sizing: border-box; /* Faz com que a largura e altura incluam a padding e border */
 }
 
+/* Define o estilo para a tag html */
 html {
-    overflow: hidden;
+    overflow: hidden; /* Oculta a barra de rolagem horizontal */
 }
 
-
+/* Estilo para a imagem de fundo */
 .image {
-    width: 100%;
-    height: 100%;
+    width: 100%; /* 100% da largura do viewport */
+    height: 100%; /* 100% da altura do viewport */
 
     & img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-
+        width: 100%; /* 100% da largura do container pai */
+        height: 100%; /* 100% da altura do container pai */
+        object-fit: cover; /* Ajusta a imagem para cobrir todo o container mantendo a proporção */
     }
 }
 
+/* Efeito de vidro sobre a imagem de fundo */
 .glass {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    position: absolute; /* Posição absoluta em relação ao viewport */
+    top: 0; /* Alinhado ao topo */
+    width: 100%; /* 100% da largura do viewport */
+    height: 100%; /* 100% da altura do viewport */
 
-    background: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8.5px);
-    -webkit-backdrop-filter: blur(8.5px);
+    background: rgba(255, 255, 255, 0.15); /* Cor de fundo com transparência */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    backdrop-filter: blur(8.5px); /* Efeito de desfoque para suavizar o conteúdo por trás */
+    -webkit-backdrop-filter: blur(8.5px); /* Para compatibilidade com navegadores WebKit */
 }
 
+/* Estilo para o corpo da página */
 body {
-    background-color: #f3f3f3;
-    width: 100%;
-    height: 100vh;
-    user-select: none;
+    background-color: #f3f3f3; /* Cor de fundo */
+    width: 100%; /* 100% da largura do viewport */
+    height: 100vh; /* 100% da altura do viewport */
+    user-select: none; /* Desabilita a seleção de texto */
 }
 
+/* Estilo para o elemento de exibição do horário */
 #horario {
-    position: absolute;
-    right: 0;
-    top: 0;
-    background-color: #ffffffa4;
-    padding: 10px;
-    border-radius: 7px;
-    margin: 1rem;
-    font-size: 1.5em;
+    position: absolute; /* Posição absoluta em relação ao viewport */
+    right: 0; /* Alinhado à direita */
+    top: 0; /* Alinhado ao topo */
+    background-color: #ffffffa4; /* Cor de fundo com transparência */
+    padding: 10px; /* Espaçamento interno */
+    border-radius: 7px; /* Borda arredondada */
+    margin: 1rem; /* Margem externa */
+    font-size: 1.5em; /* Tamanho da fonte */
 }
 
+/* Estilo para o elemento principal */
 main {
-    width: 100%;
-    height: 40vh;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    width: 100%; /* 100% da largura do viewport */
+    height: 40vh; /* Altura de 40% do viewport */
+    position: absolute; /* Posição absoluta em relação ao viewport */
+    top: 50%; /* Alinhado ao centro verticalmente */
+    left: 50%; /* Alinhado ao centro horizontalmente */
+    transform: translateX(-50%) translateY(-50%); /* Centraliza o elemento */
+    display: flex; /* Usa o modelo de layout flexível */
+    flex-direction: column; /* Direção da disposição dos elementos */
+    align-items: center; /* Alinha os itens ao centro horizontalmente */
+    justify-content: space-between; /* Distribui o espaço entre os itens verticalmente */
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-
-
+    /* Estilo para o elemento de pesquisa */
     & .pesquisar {
-        width: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        width: 50%; /* Largura de 50% do elemento pai */
+        display: flex; /* Usa o modelo de layout flexível */
+        align-items: center; /* Alinha os itens ao centro verticalmente */
+        justify-content: center; /* Alinha os itens ao centro horizontalmente */
+        background-color: white; /* Cor de fundo */
+        border: 1px solid #80808067; /* Borda sólida com transparência */
+        border-radius: 7px; /* Borda arredondada */
 
-        background-color: white;
-        border: 1px solid #80808067;
-        border-radius: 7px;
-
+        /* Estilo para o input de pesquisa */
         & input {
-            background-color: transparent;
-            padding: 10px;
-            width: 100%;
-            border: none;
-            border-radius: 7px;
-            outline: none;
+            background-color: transparent; /* Cor de fundo transparente */
+            padding: 10px; /* Espaçamento interno */
+            width: 100%; /* 100% da largura do elemento pai */
+            border: none; /* Sem borda */
+            border-radius: 7px; /* Borda arredondada */
+            outline: none; /* Remove a borda de foco */
         }
 
+        /* Estilo para o ícone de pesquisa */
         & i {
-            user-select: none;
-            font-size: 1.4em;
+            user-select: none; /* Desabilita a seleção de texto */
+            font-size: 1.4em; /* Tamanho da fonte */
         }
     }
 
+    /* Estilo para o elemento do nome da cidade */
     & .nomeCidade {
-        display: flex;
-        justify-content: center;
-        color: #181818;
+        display: flex; /* Usa o modelo de layout flexível */
+        justify-content: center; /* Alinha os itens ao centro horizontalmente */
+        color: #181818; /* Cor do texto */
 
+        /* Estilo para o ícone do país */
         & img {
-            height: 1.5rem;
+            height: 1.5rem; /* Altura fixa */
         }
     }
 
+    /* Estilo para o elemento da temperatura */
     & .temperatura {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #181818;
-        user-select: none;
+        display: flex; /* Usa o modelo de layout flexível */
+        align-items: center; /* Alinha os itens ao centro verticalmente */
+        justify-content: center; /* Alinha os itens ao centro horizontalmente */
+        color: #181818; /* Cor do texto */
+        user-select: none; /* Desabilita a seleção de texto */
 
+        /* Estilo para o elemento da temperatura */
         & #temperatura {
-            font-weight: bold;
-            font-size: 2em;
-            user-select: none;
+            font-weight: bold; /* Texto em negrito */
+            font-size: 2em; /* Tamanho da fonte */
+            user-select: none; /* Desabilita a seleção de texto */
         }
     }
 
+    /* Estilo para o container das informações adicionais */
     & .container {
-        width: 50%;
-        background-color: #ffffffa4;
-        padding: 10px;
-        border-radius: 7px;
-        margin: 1rem;
+        width: 50%; /* Largura de 50% do elemento pai */
+        background-color: #ffffffa4; /* Cor de fundo com transparência */
+        padding: 10px; /* Espaçamento interno */
+        border-radius: 7px; /* Borda arredondada */
+        margin: 1rem; /* Margem externa */
     }
 }
 
+/* Estilo para dispositivos com largura de tela até 700px */
 @media screen and (max-width: 700px) {
-
+/* Ajusta a largura dos elementos de pesquisa e container para 90% */
     .pesquisar,
     .container {
         width: 90% !important;

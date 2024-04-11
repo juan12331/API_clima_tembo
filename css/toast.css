@@ -9,7 +9,7 @@
     top: 1rem;
     transform: translateX(50%);
 
-    & i {
+    & i { /* icone que fica ao lado do toast */
         float: left;
     }
 }
