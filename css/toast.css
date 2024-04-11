@@ -1,4 +1,4 @@
-.toast {
+.toast { /*toast é a mensagem que aparece quando da erro na tela */
     position: absolute;
     font-size: 1.1em;
     padding: 1rem;
